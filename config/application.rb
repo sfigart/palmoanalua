@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Palmv
+module PalMoanalua
   class Application < Rails::Application
 
     config.generators do |g|
