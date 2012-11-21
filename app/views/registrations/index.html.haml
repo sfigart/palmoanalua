@@ -1,0 +1,69 @@
+%h1 Listing registrations
+
+%table
+  %tr
+    %th Player first name
+    %th Player last name
+    %th Father first name
+    %th Father last name
+    %th Mother first name
+    %th Mother last name
+    %th Address line 1
+    %th Address line 2
+    %th City
+    %th State
+    %th Zip code
+    %th Home phone
+    %th Father cell phone
+    %th Mother cell phone
+    %th Email address
+    %th School
+    %th Grade
+    %th Birth date
+    %th Age
+    %th Gender
+    %th Shirt size
+    %th Have Medical Insurance
+    %th Medical insurance name
+    %th Practice days
+    %th Volunteer type
+    %th Parent name for agreement
+    %th
+    %th
+    %th
+
+  - @registrations.each do |registration|
+    %tr
+      %td= registration.player_first_name
+      %td= registration.player_last_name
+      %td= registration.father_first_name
+      %td= registration.father_last_name
+      %td= registration.mother_first_name
+      %td= registration.mother_last_name
+      %td= registration.address_line_1
+      %td= registration.address_line_2
+      %td= registration.city
+      %td= registration.state_id
+      %td= registration.zip_code
+      %td= registration.home_phone
+      %td= registration.father_cell_phone
+      %td= registration.mother_cell_phone
+      %td= registration.email_address
+      %td= registration.school
+      %td= registration.grade
+      %td= registration.birth_date
+      %td= registration.age
+      %td= registration.gender
+      %td= registration.shirt_size
+      %td= registration.have_medical_insurance
+      %td= registration.medical_insurance_name
+      %td= registration.practice_days
+      %td= registration.volunteer_type
+      %td= registration.parent_name_for_agreement
+      %td= link_to 'Show', registration
+      %td= link_to 'Edit', edit_registration_path(registration)
+      %td= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Registration', new_registration_path

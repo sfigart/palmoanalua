@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Palmv::Application.load_tasks
+PalMoanalua::Application.load_tasks

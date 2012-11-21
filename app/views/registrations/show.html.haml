@@ -1,0 +1,88 @@
+%p#notice= notice
+
+%p
+  %b Registration number:
+  = @registration.number
+
+%p
+  %b Player first name:
+  = @registration.player_first_name
+%p
+  %b Player last name:
+  = @registration.player_last_name
+%p
+  %b Father first name:
+  = @registration.father_first_name
+%p
+  %b Father last name:
+  = @registration.father_last_name
+%p
+  %b Mother first name:
+  = @registration.mother_first_name
+%p
+  %b Mother last name:
+  = @registration.mother_last_name
+%p
+  %b Address line 1:
+  = @registration.address_line_1
+%p
+  %b Address line 2:
+  = @registration.address_line_2
+%p
+  %b City:
+  = @registration.city
+%p
+  %b State:
+  = @registration.state
+%p
+  %b Zip code:
+  = @registration.zip_code
+%p
+  %b Home phone:
+  = @registration.home_phone
+%p
+  %b Father cell phone:
+  = @registration.father_cell_phone
+%p
+  %b Mother cell phone:
+  = @registration.mother_cell_phone
+%p
+  %b Email address:
+  = @registration.email_address
+%p
+  %b School:
+  = @registration.school
+%p
+  %b Grade:
+  = @registration.grade
+%p
+  %b Birth date:
+  = @registration.birth_date
+%p
+  %b Age:
+  = @registration.age
+%p
+  %b Gender:
+  = @registration.gender
+%p
+  %b Shirt size:
+  = @registration.shirt_size
+%p
+  %b Have Medical insurance:
+  = @registration.have_medical_insurance
+%p
+  %b Medical insurance name:
+  = @registration.medical_insurance_name
+%p
+  %b Practice days:
+  = @registration.practice_days
+%p
+  %b Volunteer type:
+  = @registration.volunteer_type
+%p
+  %b Parent name for agreement:
+  = @registration.parent_name_for_agreement
+
+= link_to 'Edit', edit_registration_path(@registration)
+\|
+= link_to 'Back', registrations_path

@@ -1,4 +1,7 @@
 PalMoanalua::Application.routes.draw do
+  resources :registrations
+
+
   authenticated :user do
     root :to => 'home#index'
   end
