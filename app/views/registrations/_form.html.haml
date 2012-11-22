@@ -32,7 +32,8 @@
       %fieldset
         %legend Home address
         .row-fluid
-          = f.input :address_line_1, :placeholder => "Street address", :label => false, :input_html => { :class => 'span9' }
+          .span9
+            = f.input :address_line_1, :placeholder => "Street address", :label => false, :input_html => {:class => 'input-block-level'}
         .row-fluid
           = f.input :address_line_2, :placeholder => "Address Line 2", :label => false, :input_html => {:class => 'span9'}
         .row-fluid
@@ -63,11 +64,12 @@
             = f.input :school, :input_html => {:class => 'input-block-level'}
 
         .row-fluid
-          = f.input :birth_date
+          .span9
+            = f.input :birth_date, :as => :date, :start_year => Date.today.year - 13,  :end_year => Date.today.year, :order => [:month, :day, :year], :use_short_month => true, :prompt => true, :input_html => {:class => 'input-small'}
 
         .row-fluid
           .span3
-            = f.input :age, :collection => ages
+            = f.input :age
           .span3
             = f.input :gender, :collection => genders
           .span3
@@ -75,13 +77,15 @@
 
         .row-fluid
           .span3
-            = f.input :have_medical_insurance, :as => :select
+            = f.input :has_medical_insurance, :as => :select
           .span6
             = f.input :medical_insurance_name, :input_html => {:class => 'input-block-level'}, :hint => "<em class='text-warning'>If your child does not have medical insurance s/he will not be placed on a team</em>"
 
     .row-fluid
       %fieldset
-        %legend Practice day request
+        %legend
+          Practice day request 
+          %em (optional)
         %p.text-warning Please note if you place specific days for practice and we cannot accommodate MAC will NOT place child on a team. Therefore requesting days should only be for those who absolutely cannot practice on certain days.
       = f.input :practice_days, :collection => practice_days, :multiple => true, :as => :check_boxes, :label => false, :item_wrapper_class => 'inline'
     .row-fluid
@@ -89,7 +93,8 @@
         %legend Volunteering
         %p MAC activities are run by parent's such as yourself. Volunteering to coach a team or being a team parent is encouraged. Without enough head coaches, MAC has to turn away interested players.
         .row-fluid
-        = f.input :volunteer_type, :collection => volunteer_types, :label => false, :as => :radio_buttons, :item_wrapper_class => 'inline'
+          .span8
+            = f.input :volunteer_type, :collection => volunteer_types, :label => false, :as => :radio_buttons, :item_wrapper_class => 'inline'
         .row-fluid
           %em Head coaches will be contacted ahead of time
     %hr
