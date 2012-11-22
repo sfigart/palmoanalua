@@ -5,13 +5,16 @@ class Registration < ActiveRecord::Base
             :father_last_name, :father_first_name,
             :mother_last_name, :mother_first_name,
             :address_line_1, :city, :state,
-            :home_phone, :father_cell_phone, :mother_cell_phone,
+            :home_phone,
+            :father_cell_phone, :father_work_phone,
+            :mother_cell_phone, :mother_work_phone,
             :email_address, :school, :grade,
             :birth_date, :age, :gender,
             :shirt_size,
             :have_medical_insurance,
             :medical_insurance_name,
             :parent_name_for_agreement,
+            :volunteer_type,
             :presence => true
               
     validates :zip_code,      :presence => true, :numericality => { :only_integer => true }

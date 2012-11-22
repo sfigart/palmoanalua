@@ -11,11 +11,25 @@ module RegistrationsHelper
   end
   
   def grades
-    %w(K 1 2 3 4 5 6)
+    [
+      ['Kindergarten', 'K'],
+      ['1st grade', '1'],
+      ['2nd grade', '2'],
+      ['3rd grade', '3'],
+      ['4th grade', '4'],
+      ['5th grade', '5'],
+      ['6th grade', '6']
+    ]
   end
   
   def practice_days
-    %w(M Tu W Th F)
+    [
+      ['Monday', 'M'],
+      ['Tuesday', 'Tu'],
+      ['Wednesday', 'W'],
+      ['Thursday', 'Th'],
+      ['Friday', 'F']
+    ]
   end
   
   def shirt_sizes
@@ -26,7 +40,8 @@ module RegistrationsHelper
     [
       'Head Coach',
       'Assistant Coach',
-      'Team Parent'
+      'Team Parent',
+      'Unable to volunteer'
     ]
   end
   
