@@ -43,7 +43,7 @@
       %td= registration.address_line_1
       %td= registration.address_line_2
       %td= registration.city
-      %td= registration.state_id
+      %td= registration.state
       %td= registration.zip_code
       %td= registration.home_phone
       %td= registration.father_cell_phone
@@ -51,11 +51,11 @@
       %td= registration.email_address
       %td= registration.school
       %td= registration.grade
-      %td= registration.birth_date
+      %td= '**/**/****' if registration.encrypted_birth_date.present?
       %td= registration.age
       %td= registration.gender
       %td= registration.shirt_size
-      %td= registration.have_medical_insurance
+      %td= registration.has_medical_insurance
       %td= registration.medical_insurance_name
       %td= registration.practice_days
       %td= registration.volunteer_type

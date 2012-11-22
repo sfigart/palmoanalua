@@ -45,14 +45,15 @@
       %fieldset
         %legend Contact Information
         .row-fluid
-          .span3= f.input :home_phone, :placeholder => 'Home phone', :label => false, :input_html => {:class => 'input-block-level'}
-          .span6= f.input :email_address, :placeholder => 'Email address', :label => false, :input_html => {:class => 'input-block-level'}
+          .span3
+            = f.input :home_phone, :label => "Home phone", :input_html => {:class => 'input-block-level phone', :type => :text}
+          .span6= f.input :email_address, :label => 'Email address', :input_html => {:class => 'input-block-level'}
         .row-fluid
-          .span3= f.input :father_cell_phone, :placeholder => "Father's cell", :label => false, :input_html => {:class => 'input-block-level'}
-          .span3= f.input :father_work_phone, :placeholder => "Father's work", :label => false, :input_html => {:class => 'input-block-level'}
+          .span3= f.input :father_cell_phone, :label => "Father's cell", :input_html => {:class => 'input-block-level phone', :type => :text}
+          .span3= f.input :father_work_phone, :label => "Father's work", :input_html => {:class => 'input-block-level phone', :type => :text}
         .row-fluid
-          .span3= f.input :mother_cell_phone, :placeholder => "Mother's cell", :label => false, :input_html => {:class => 'input-block-level'}
-          .span3= f.input :mother_work_phone, :placeholder => "Mother's work", :label => false, :input_html => {:class => 'input-block-level'}
+          .span3= f.input :mother_cell_phone, :label => "Mother's cell", :input_html => {:class => 'input-block-level phone', :type => :text}
+          .span3= f.input :mother_work_phone, :label => "Mother's work", :input_html => {:class => 'input-block-level phone', :type => :text}
 
     .row-fluid
       %fieldset
@@ -68,18 +69,24 @@
             = f.input :birth_date, :as => :date, :start_year => Date.today.year - 13,  :end_year => Date.today.year, :order => [:month, :day, :year], :use_short_month => true, :prompt => true, :input_html => {:class => 'input-small'}
 
         .row-fluid
-          .span3
-            = f.input :age
+          .span1
+            = f.input :age, :input_html => {:class => 'input-mini', :type => :text, :maxlength => 2}
           .span3
             = f.input :gender, :collection => genders
           .span3
             = f.input :shirt_size, :collection => shirt_sizes
 
-        .row-fluid
-          .span3
-            = f.input :has_medical_insurance, :as => :select
-          .span6
-            = f.input :medical_insurance_name, :input_html => {:class => 'input-block-level'}, :hint => "<em class='text-warning'>If your child does not have medical insurance s/he will not be placed on a team</em>"
+      .row-fluid
+        %fieldset
+          %legend Medical Insurance Coverage
+          .row-fluid
+            .span4
+              = f.input :has_medical_insurance, :label => "Medical Insurance Coverage Plan?", :as => :select
+            .span6
+              = f.input :medical_insurance_name, :label => "Name of Insurance", :input_html => {:class => 'input-block-level'}
+          .row-fluid
+            %p
+              %em.text-warning If your child does not have medical insurance s/he will not be placed on a team
 
     .row-fluid
       %fieldset
@@ -90,7 +97,7 @@
       = f.input :practice_days, :collection => practice_days, :multiple => true, :as => :check_boxes, :label => false, :item_wrapper_class => 'inline'
     .row-fluid
       %fieldset
-        %legend Volunteering
+        %legend Parents as Volunteers
         %p MAC activities are run by parent's such as yourself. Volunteering to coach a team or being a team parent is encouraged. Without enough head coaches, MAC has to turn away interested players.
         .row-fluid
           .span8
@@ -111,4 +118,4 @@
       = render :partial => 'payment'
 
   .form-actions
-    = f.submit 'Submit Registration'
+    = f.submit 'Submit Registration', :class => 'btn btn-large btn-primary'
