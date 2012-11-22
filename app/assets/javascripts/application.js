@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require modernizr
 //= require jquery.maskedinput-1.3.min
 //= require bootstrap
 //= require_tree .
