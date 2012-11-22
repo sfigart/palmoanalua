@@ -80,4 +80,9 @@ class RegistrationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /registrations/1/thankyou
+  def thankyou
+    @registration = Registration.find(params[:id])
+  end
 end
