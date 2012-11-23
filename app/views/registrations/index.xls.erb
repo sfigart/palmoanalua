@@ -71,8 +71,8 @@
         <Cell><Data ss:Type="String"><%= format_practice_days(registration.practice_days) %></Data></Cell>
         <Cell><Data ss:Type="String"><%= registration.volunteer_type %></Data></Cell>
         <Cell><Data ss:Type="String"><%= registration.parent_name_for_agreement %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= registration.created_at.localtime.strftime("%m/%d/%y %l:%M %p") %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= registration.updated_at.localtime.strftime("%m/%d/%y %l:%M %p") %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= format_to_hawaii(registration.created_at) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= format_to_hawaii(registration.updated_at) %></Data></Cell>
       </Row>
     <% end %>
     </Table>

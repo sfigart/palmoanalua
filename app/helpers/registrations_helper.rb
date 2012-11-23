@@ -10,6 +10,10 @@ module RegistrationsHelper
     practice_days.join(', ')
   end
   
+  def format_to_hawaii(timewithzone)
+    timewithzone.in_time_zone("Hawaii").strftime("%m/%d/%y %l:%M %p")
+  end
+  
   def ages
     4..12
   end
