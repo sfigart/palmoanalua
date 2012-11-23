@@ -2,12 +2,12 @@
 
 %p
   Download:
+  = link_to "CSV", registrations_path(format: "csv")
   = link_to "Excel", registrations_path(format: "xls")
 
-%table.table.table-striped.table-bordered.table-hover.table-condensed{:id => :registrations}
+%table.display{:id => :registrations, :data_source => registrations_path(format: 'json')}
   %thead
     %tr
-      %th Registration #
       %th Player
       %th Email
       %th Grade
@@ -20,8 +20,7 @@
   %tbody
   - @registrations.each do |registration|
     %tr
-      %td= link_to(registration.number, registration)
-      %td= registration.player_name
+      %td= link_to(registration.player_name, registration)
       %td= registration.email_address
       %td= registration.grade
       %td= registration.age

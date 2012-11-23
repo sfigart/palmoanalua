@@ -8,8 +8,8 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: RegistrationsDatatable.new(view_context) }
-      format.csv { render text: @registrations.to_csv }
+      format.json { render json: @registrations }
+      format.csv { send_data Registration.to_csv }
       format.xls
     end
   end

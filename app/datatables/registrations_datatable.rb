@@ -20,8 +20,11 @@ private
     registrations.map do |registration|
       [
         link_to(registration.player_name, registration),
-        h(registration.father_first_name + ' ' + registration.father_last_name),
-        h(registration.mother_first_name + ' ' + registration.mother_last_name)
+        h(registration.email_address),
+        h(registration.grade),
+        h(registration.age),
+        h(registration.gender),
+        h(registration.shirt_size)
       ]
     end
   end
