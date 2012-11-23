@@ -1,4 +1,6 @@
 class RegistrationsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:new, :create, :thankyou]
+  
   # GET /registrations
   # GET /registrations.json
   def index

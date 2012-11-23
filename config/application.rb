@@ -71,6 +71,6 @@ module PalMoanalua
     config.assets.initialize_on_precompile=false
     
     # Force SSL if we are in production
-    config.force_ssl = true if Rails.env == 'production'
+    config.force_ssl = true if Rails.env.production?
   end
 end

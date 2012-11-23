@@ -85,15 +85,16 @@
             .span6
               = f.input :medical_insurance_name, :label => "Name of Insurance", :input_html => {:class => 'input-block-level'}
           .row-fluid
-            %p
-              %em.text-warning If your child does not have medical insurance s/he will not be placed on a team
+            .alert.alert-info
+              %em If your child does not have medical insurance s/he will not be placed on a team
 
     .row-fluid
       %fieldset
         %legend
           Practice day request 
           %em (optional)
-        %p.text-warning Please note if you place specific days for practice and we cannot accommodate MAC will NOT place child on a team. Therefore requesting days should only be for those who absolutely cannot practice on certain days.
+        .alert.alert-info
+          %p Please note if you place specific days for practice and we cannot accommodate MAC will NOT place child on a team. Therefore requesting days should only be for those who absolutely cannot practice on certain days.
         = f.input :practice_days, :collection => practice_days, :multiple => true, :as => :check_boxes, :label => false, :item_wrapper_class => 'inline'
     .row-fluid
       %fieldset
