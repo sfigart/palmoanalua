@@ -8,7 +8,8 @@ PalMoanalua::Application.routes.draw do
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "registrations#new"
+  root :to => "home#volleyball"
+  
   devise_for :users
   resources :users
 end
