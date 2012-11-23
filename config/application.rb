@@ -69,5 +69,8 @@ module PalMoanalua
     
     # Heroku requires this to be false
     config.assets.initialize_on_precompile=false
+    
+    # Force SSL if we are in production
+    config.force_ssl = true if Rails.env == 'production'
   end
 end
