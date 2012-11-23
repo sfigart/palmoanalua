@@ -1,50 +1,47 @@
 %h1 Listing registrations
 
-%table
-  %tr
-    %th Player first name
-    %th Player last name
-    %th Father first name
-    %th Father last name
-    %th Mother first name
-    %th Mother last name
-    %th Address line 1
-    %th Address line 2
-    %th City
-    %th State
-    %th Zip code
-    %th Home phone
-    %th Father cell phone
-    %th Mother cell phone
-    %th Email address
-    %th School
-    %th Grade
-    %th Birth date
-    %th Age
-    %th Gender
-    %th Shirt size
-    %th Have Medical Insurance
-    %th Medical insurance name
-    %th Practice days
-    %th Volunteer type
-    %th Parent name for agreement
-    %th
-    %th
-    %th
+%p
+  Download:
+  = link_to "CSV", registrations_path(format: "csv")
+  = link_to "Excel", registrations_path(format: "xls")
 
+%table.table.table-striped.table-bordered.table-hover.table-condensed.display{:id => :registrations, :data_source => registrations_url(:format => 'json')}
+  %thead
+    %tr
+      %th Player
+      %th Father
+      %th Mother
+      %th Address
+      %th Home phone
+      %th Father cell
+      %th Mother cell
+      %th Email
+      %th School
+      %th Grade
+      %th Birth date
+      %th Age
+      %th Gender
+      %th Shirt size
+      %th Has Medical Insurance
+      %th Medical insurance name
+      %th Practice days
+      %th Volunteer type
+      %th Parent name for agreement
+      %th
+      %th
+      %th
+
+  %tbody
   - @registrations.each do |registration|
     %tr
-      %td= registration.player_first_name
-      %td= registration.player_last_name
-      %td= registration.father_first_name
-      %td= registration.father_last_name
-      %td= registration.mother_first_name
-      %td= registration.mother_last_name
-      %td= registration.address_line_1
-      %td= registration.address_line_2
-      %td= registration.city
-      %td= registration.state
-      %td= registration.zip_code
+      %td= link_to(registration.player_name, registration)
+      %td= registration.father_first_name + ' ' + registration.father_last_name
+      %td= registration.mother_first_name + ' ' + registration.mother_last_name
+      %td
+        %address
+          = registration.address_line_1
+          = registration.address_line_2
+          = registration.city + ', ' + registration.state + ' ' + registration.zip_code
       %td= registration.home_phone
       %td= registration.father_cell_phone
       %td= registration.mother_cell_phone
@@ -57,7 +54,7 @@
       %td= registration.shirt_size
       %td= registration.has_medical_insurance
       %td= registration.medical_insurance_name
-      %td= registration.practice_days
+      %td= registration.practice_days.join(', ')
       %td= registration.volunteer_type
       %td= registration.parent_name_for_agreement
       %td= link_to 'Show', registration

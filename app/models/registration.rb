@@ -1,6 +1,7 @@
 class Registration < ActiveRecord::Base
 
   attr_accessible :activity, :address_line_1, :address_line_2, :age, :birth_date, :city, :email_address, :father_cell_phone, :father_first_name, :father_last_name, :gender, :grade, :home_phone, :medical_insurance_name, :has_medical_insurance, :mother_cell_phone, :father_work_phone, :mother_work_phone, :mother_first_name, :mother_last_name, :parent_name_for_agreement, :player_first_name, :player_last_name, :practice_days, :school, :shirt_size, :state, :volunteer_type, :zip_code
+  attr_accessible :birth_date_as_date
   serialize :practice_days
   attr_encrypted :birth_date, :key => 'something secret!'
   
@@ -33,5 +34,22 @@ class Registration < ActiveRecord::Base
   
   def player_name
     "#{player_first_name} #{player_last_name}"
+  end
+  
+  def birth_date_as_date=(value)
+    self.birth_date = value
+  end
+  
+  def birth_date_as_date
+    Date.strptime(self.birth_date, '%F')
+  end
+  
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |registration|
+        csv << registration.attributes.values_at(*column_names)
+      end
+    end
   end
 end
