@@ -6,7 +6,7 @@ PalMoanalua::Application.routes.draw do
   end
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'home#volleyball'
   end
   root :to => "home#volleyball"
   
