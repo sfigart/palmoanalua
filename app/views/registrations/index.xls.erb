@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Registration Number</Data></Cell>
+        <Cell><Data ss:Type="String">Player First Name</Data></Cell>
+        <Cell><Data ss:Type="String">Player Last Name</Data></Cell>
+        <Cell><Data ss:Type="String">Father First Name</Data></Cell>
+        <Cell><Data ss:Type="String">Father Last Name</Data></Cell>
+        <Cell><Data ss:Type="String">Mother First Name</Data></Cell>
+        <Cell><Data ss:Type="String">Mother Last Name</Data></Cell>
+        <Cell><Data ss:Type="String">Address Line 1</Data></Cell>
+        <Cell><Data ss:Type="String">Address Line 2</Data></Cell>
+        <Cell><Data ss:Type="String">City</Data></Cell>
+        <Cell><Data ss:Type="String">State</Data></Cell>
+        <Cell><Data ss:Type="String">Zip Code</Data></Cell>
+        <Cell><Data ss:Type="String">Home Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Father Work Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Father Cell Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Mother Work Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Mother Cell Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Email Address</Data></Cell>
+        <Cell><Data ss:Type="String">School</Data></Cell>
+        <Cell><Data ss:Type="String">Grade</Data></Cell>
+        <Cell><Data ss:Type="String">Birth Date</Data></Cell>
+        <Cell><Data ss:Type="String">Age</Data></Cell>
+        <Cell><Data ss:Type="String">Gender</Data></Cell>
+        <Cell><Data ss:Type="String">Shirt Size</Data></Cell>
+        <Cell><Data ss:Type="String">Has Medical Insurance</Data></Cell>
+        <Cell><Data ss:Type="String">Medical Insurance Name</Data></Cell>
+        <Cell><Data ss:Type="String">Practice Days</Data></Cell>
+        <Cell><Data ss:Type="String">Volunteer Type</Data></Cell>
+        <Cell><Data ss:Type="String">Parent Name For Agreement</Data></Cell>
+        <Cell><Data ss:Type="String">Created At</Data></Cell>
+        <Cell><Data ss:Type="String">Updated At</Data></Cell>
+
+      </Row>
+    <% @registrations.each do |registration| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= registration.number %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.player_first_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.player_last_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.father_first_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.father_last_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.mother_first_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.mother_last_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.address_line_1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.address_line_2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.city %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.state %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.zip_code %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.home_phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.father_work_phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.father_cell_phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.mother_work_phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.mother_cell_phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.email_address %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.school %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.grade %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= to_mmddyy(registration.birth_date) %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= registration.age %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.gender %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.shirt_size %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.has_medical_insurance %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.medical_insurance_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= format_practice_days(registration.practice_days) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.volunteer_type %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registration.parent_name_for_agreement %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= format_to_hawaii(registration.created_at) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= format_to_hawaii(registration.updated_at) %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

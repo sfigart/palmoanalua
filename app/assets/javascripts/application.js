@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require jquery.maskedinput-1.3.min
+=======
+//= require dataTables/jquery.dataTables
+//= require jquery.maskedinput-1.3.min
+//= require modernizr
+>>>>>>> 9a0944db081c75229b478596e8096e896b1bde3a
 //= require bootstrap
 //= require_tree .

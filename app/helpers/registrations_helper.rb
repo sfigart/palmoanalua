@@ -1,4 +1,19 @@
 module RegistrationsHelper
+
+  def to_mmddyy(birth_date)
+    real_date = DateTime.strptime(birth_date,"%Y-%m-%d")
+    real_date.strftime("%m/%d/%Y")
+  end
+  
+  def format_practice_days(practice_days)
+    practice_days.reject! { |d| d.empty? }
+    practice_days.join(', ')
+  end
+  
+  def format_to_hawaii(timewithzone)
+    timewithzone.in_time_zone("Hawaii").strftime("%m/%d/%y %l:%M %p")
+  end
+  
   def ages
     4..12
   end

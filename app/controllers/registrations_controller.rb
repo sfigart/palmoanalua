@@ -1,4 +1,6 @@
 class RegistrationsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:new, :create, :thankyou]
+  
   # GET /registrations
   # GET /registrations.json
   def index
@@ -7,6 +9,8 @@ class RegistrationsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @registrations }
+      format.csv { send_data Registration.to_csv }
+      format.xls
     end
   end
 
@@ -44,6 +48,8 @@ class RegistrationsController < ApplicationController
     
     respond_to do |format|
       if @registration.save
+        RegistrationMailer.registration_complete(@registration).deliver
+        
         format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
         format.json { render json: @registration, status: :created, location: @registration }
       else
@@ -79,5 +85,10 @@ class RegistrationsController < ApplicationController
       format.html { redirect_to registrations_url }
       format.json { head :no_content }
     end
+  end
+  
+  # GET /registrations/1/thankyou
+  def thankyou
+    @registration = Registration.find(params[:id])
   end
 end

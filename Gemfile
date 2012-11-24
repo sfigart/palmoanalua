@@ -33,3 +33,7 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 # Stuff I added
 gem 'validates_timeliness', '~> 3.0'
 gem 'attr_encrypted'
+gem 'modernizr-rails'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-rails'
+gem 'will_paginate'

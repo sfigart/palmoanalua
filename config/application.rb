@@ -1,5 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
+require 'csv'
 require 'rails/all'
 
 if defined?(Bundler)
@@ -68,6 +69,9 @@ module PalMoanalua
     config.assets.version = '1.0'
     
     # Heroku requires this to be false
-    #config.assets.initialize_on_precompile=false
+    config.assets.initialize_on_precompile=false
+    
+    # Force SSL if we are in production
+    config.force_ssl = true if Rails.env.production?
   end
 end
