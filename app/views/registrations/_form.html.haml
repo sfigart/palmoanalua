@@ -14,19 +14,13 @@
       %fieldset
         %legend Parent Information
         .row-fluid
-          .span2 
-            %abbr{:title => :required} * 
-            %b Father's name
-        .row-fluid
-          .span3= f.input :father_first_name, :placeholder => "First", :label => false
-          .span3= f.input :father_last_name, :placeholder => "Last", :label => false
-        .row-fluid
-          .span2
-            %abbr{:title => :required} *
-            %b Mother's name
+          .span3= f.input :father_first_name, :placeholder => "First",
+            :label => "Father's name", :required => true
+          .span3= f.input :father_last_name, :placeholder => "Last", :label => '&nbsp;'
         .row-fluid  
-          .span3= f.input :mother_first_name, :placeholder => "First", :label => false
-          .span3= f.input :mother_last_name, :placeholder => "Last", :label => false
+          .span3= f.input :mother_first_name, :placeholder => "First",
+            :label => "Mother's name", :required => true
+          .span3= f.input :mother_last_name, :placeholder => "Last", :label => false, :label => '&nbsp;'
 
     .row-fluid
       %fieldset
