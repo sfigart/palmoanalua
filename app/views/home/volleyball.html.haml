@@ -1,20 +1,21 @@
 %h3 Moanalua Athletic Club (MAC) Volleyball Information
-
 %p.lead
   The PAL MAC 2013 volleyball season is coming up soon.
+  %ul
+    %li.lead Registration is open to children between the ages of 4 and 12 (Grades K-6)
+    %li.lead The season starts in January and will run for 10 weeks
+%p.lead If your child is interested in playing volleyball register during the registration period.
 
-%ul
-  %li.lead Registration is open to children between the ages of 4 and 12 (Grades K-6)
-  %li.lead The season starts in January and will run for 10 weeks
-
-%p.lead
-  If your child is interested in playing volleyball for PAL MAC register during the registration period.
-
-=link_to 'Preview the Beta Registration Page!', new_registration_url, class: 'btn btn-large btn-primary'
-
-.alert.alert-warning{:style => 'margin-top: 1em;'}
-  %strong Note:
-  Your registration information is only for
-  %em
-    testing
-  purposes. It will be discarded when the official registration period begins.
+.row
+  .span12
+    .alert.alert-warning
+      .row
+        .span5
+          =link_to 'Preview the Beta Registration Page!', new_registration_url, class: 'btn btn-large btn-primary', style: 'margin-top: 11px'
+        .span6
+          %p
+            %span.label.label-warning Warning
+            Any data you enter in the preview registration page is only for
+            %em
+              testing
+            purposes. It will be deleted when the official registration period begins.

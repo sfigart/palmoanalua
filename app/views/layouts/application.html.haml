@@ -9,22 +9,20 @@
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
-    %header.navbar.navbar-fixed-top.navbar-inverse
-      %nav.navbar-inner
-        .container
-          = render 'layouts/navigation'
-    #main{:role => "main"}
+    #wrap
       .container
-        .hero-unit
-          .row-fluid
-            .span2= image_tag("mac-logo-blue.png")
-            .span10
-              %h1 Police Activities League
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
-      / ! end of .container
-    / ! end of #main
+        %header.navbar.navbar-fixed-top.navbar-inverse
+          %nav.navbar-inner
+            .container
+              = render 'layouts/navigation'
+      = render 'layouts/header'
+      .container
+        #main{:role => "main"}
+          .content
+            .row
+              .span12
+                = render 'layouts/messages'
+                = yield
+      #push
+    #footer
+      = render 'layouts/footer'

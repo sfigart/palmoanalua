@@ -2,8 +2,12 @@
 %ul.nav
   - if user_signed_in?
     - if current_user.has_role?(:manager) || current_user.has_role?(:admin)
-      %li
-        = link_to 'Registrations', registrations_path
+      - if controller.class.name =~ /^Registrations/
+        %li.active
+          = link_to 'Registrations', registrations_path
+      -else
+        %li
+          = link_to 'Registrations', registrations_path
   - if user_signed_in?
     %li
       = link_to 'Logout', destroy_user_session_path, :method=>'delete'

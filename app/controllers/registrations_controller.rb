@@ -50,7 +50,7 @@ class RegistrationsController < ApplicationController
       if @registration.save
         RegistrationMailer.registration_complete(@registration).deliver
         
-        format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
+        format.html { redirect_to thankyou_registration_path(@registration) }
         format.json { render json: @registration, status: :created, location: @registration }
       else
         format.html { render action: "new" }
