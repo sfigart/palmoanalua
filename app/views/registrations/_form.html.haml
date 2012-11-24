@@ -1,71 +1,72 @@
 = simple_form_for(@registration) do |f|
   = f.error_notification
   .form-inputs
-    .row-fluid
+    .row
       %fieldset
         %legend Player's name
-        .row-fluid
+        .row
           .span3
             = f.input :player_first_name, :placeholder => "First", :label => false
           .span3
             = f.input :player_last_name, :placeholder => "Last", :label => false
 
-    .row-fluid
+    .row
       %fieldset
         %legend Parent Information
-        .row-fluid
+        .row
           .span3= f.input :father_first_name, :placeholder => "First",
             :label => "Father's name", :required => true
           .span3= f.input :father_last_name, :placeholder => "Last", :label => '&nbsp;'
-        .row-fluid  
+        .row  
           .span3= f.input :mother_first_name, :placeholder => "First",
             :label => "Mother's name", :required => true
           .span3= f.input :mother_last_name, :placeholder => "Last", :label => false, :label => '&nbsp;'
 
-    .row-fluid
+    .row
       %fieldset
         %legend Home address
-        .row-fluid
+        .row
           .span9
             = f.input :address_line_1, :placeholder => "Street address", :label => false, :input_html => {:class => 'input-block-level'}
-        .row-fluid
-          = f.input :address_line_2, :placeholder => "Address Line 2", :label => false, :input_html => {:class => 'span9'}
-        .row-fluid
+        .row
+          .span9
+            = f.input :address_line_2, :placeholder => "Address Line 2", :label => false, :input_html => {:class => 'input-block-level'}
+        .row
           .span3= f.input :city, :placeholder => 'City', :label => false
           .span3= f.input :state, :collection => us_states, :selected => 'HI', :label => false
           .span3= f.input :zip_code, :placeholder => "Zip code", :label => false
 
-    .row-fluid
+    .row
       %fieldset
         %legend Contact Information
-        .row-fluid
+        .row
           .span3
             = f.input :home_phone, :label => "Home phone", :input_html => {:class => 'input-block-level phone', :type => :text}
           .span6= f.input :email_address, :label => 'Email address', :input_html => {:class => 'input-block-level'}
-        .row-fluid
+        .row
           .span3= f.input :father_cell_phone, :label => "Father's cell", :input_html => {:class => 'input-block-level phone', :type => :text}
           .span3= f.input :father_work_phone, :label => "Father's work", :input_html => {:class => 'input-block-level phone', :type => :text}
-        .row-fluid
+        .row
           .span3= f.input :mother_cell_phone, :label => "Mother's cell", :input_html => {:class => 'input-block-level phone', :type => :text}
           .span3= f.input :mother_work_phone, :label => "Mother's work", :input_html => {:class => 'input-block-level phone', :type => :text}
 
-    .row-fluid
+    .row
       %fieldset
         %legend Player's Information
-        .row-fluid
+        .row
           .span3
             = f.input :grade, :collection => grades
           .span6 
             = f.input :school, :input_html => {:class => 'input-block-level'}
 
-        .row-fluid
+        .row
           .span9
             - if @registration.new_record?
               = f.input :birth_date, :as => :date, :start_year => Date.today.year - 13,  :end_year => Date.today.year, :order => [:month, :day, :year], :use_short_month => true, :prompt => true, :input_html => {:class => 'input-small'}
             - else
               = f.input :birth_date_as_date
 
-        .row-fluid
+        .row
           .span1
             = f.input :age, :input_html => {:class => 'input-mini', :type => :text, :maxlength => 2}
           .span3
@@ -73,47 +74,57 @@
           .span3
             = f.input :shirt_size, :collection => shirt_sizes
 
-      .row-fluid
-        %fieldset
-          %legend Medical Insurance Coverage
-          .row-fluid
-            .span4
-              = f.input :has_medical_insurance, :label => "Medical Insurance Coverage Plan?", :as => :select
-            .span6
-              = f.input :medical_insurance_name, :label => "Name of Insurance", :input_html => {:class => 'input-block-level'}
-          .row-fluid
+    .row
+      %fieldset
+        %legend Medical Insurance Coverage
+        .row
+          .span4
+            = f.input :has_medical_insurance, :label => "Medical Insurance Coverage Plan?", :as => :select
+          .span6
+            = f.input :medical_insurance_name, :label => "Name of Insurance", :input_html => {:class => 'input-block-level'}
+        .row
+          .span10
             .alert.alert-info
               %em If your child does not have medical insurance s/he will not be placed on a team
 
-    .row-fluid
+    .row
       %fieldset
         %legend
           Practice day request 
           %em (optional)
-        .alert.alert-info
-          %p Please note if you place specific days for practice and we cannot accommodate MAC will NOT place child on a team. Therefore requesting days should only be for those who absolutely cannot practice on certain days.
-        = f.input :practice_days, :collection => practice_days, :multiple => true, :as => :check_boxes, :label => false, :item_wrapper_class => 'inline'
-    .row-fluid
+        .row
+          .span10
+            = f.input :practice_days, :collection => practice_days, :multiple => true, :as => :check_boxes, :label => false, :item_wrapper_class => 'inline'
+        .row
+          .span10
+            .alert.alert-info
+              %p
+                %span.label.label-warning Warning
+                Please note if you place specific days for practice and we cannot accommodate MAC will NOT place child on a team. Therefore requesting days should only be for those who absolutely cannot practice on certain days.
+
+    .row
       %fieldset
         %legend Parents as Volunteers
         %p MAC activities are run by parent's such as yourself. Volunteering to coach a team or being a team parent is encouraged. Without enough head coaches, MAC has to turn away interested players.
-        .row-fluid
+        .row
           .span8
             = f.input :volunteer_type, :collection => volunteer_types, :label => false, :as => :radio_buttons, :item_wrapper_class => 'inline'
-        .row-fluid
-          %em Head coaches will be contacted ahead of time
+        .row
+          .span8
+            %em Head coaches will be contacted ahead of time
     %hr
-    .row-fluid
+    .row
       = render :partial => 'agreement', :locals => {:f => f}
         
-    .row-fluid
+    .row
       = render :partial => 'fees'
 
-    .row-fluid
+    .row
       = render :partial => 'screening'
 
-    .row-fluid
+    .row
       = render :partial => 'payment'
 
-  .form-actions
-    = f.submit 'Submit Registration', :class => 'btn btn-large btn-primary'
+  .row
+    .form-actions
+      = f.submit 'Submit Registration', :class => 'btn btn-large btn-primary'
