@@ -39,7 +39,9 @@ module RegistrationsHelper
       ['3rd grade', '3'],
       ['4th grade', '4'],
       ['5th grade', '5'],
-      ['6th grade', '6']
+      ['6th grade', '6'],
+      ['7th grade', '7'],
+      ['8th grade', '8']
     ]
   end
   

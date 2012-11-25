@@ -45,14 +45,14 @@
           .span12
             %p The email address you provide will be used to contact you about MAC Volleyball information.
         .row
-          .span6= f.input :email_address, :label => 'Email address', :input_html => {:class => 'input-block-level'}
+          .span6= f.input :email_address, :placeholder => "Email address", :label => false, :input_html => {:class => 'input-block-level'}
 
     .row
       %fieldset
         %legend Contact Phone Information
         .row
           .span10
-            %p The phone numbers you provide will be used to contact you during the volleyball season by the league adminstrator, team coach or team parent.
+            %p The phone numbers you provide will be used to contact you during the volleyball season by the league coordinator, team coach or team parent.
         = phone_number_presence_notice(@registration)
         .row
           .span3
@@ -68,10 +68,8 @@
       %fieldset
         %legend Player's Information
         .row
-          .span3
-            = f.input :grade, :collection => grades
-          .span6 
-            = f.input :school, :input_html => {:class => 'input-block-level'}
+          .span3= f.input :grade, :collection => grades
+          .span6= f.input :school, :input_html => {:class => 'input-block-level'}
 
         .row
           .span9
