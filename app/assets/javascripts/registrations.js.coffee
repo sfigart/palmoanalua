@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ($) ->
   $(".phone").mask "(999) 999-9999? x99999"
+  Placeholders.init();
 
 # jQuery ->
 #   $('#registrations').dataTable

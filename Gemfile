@@ -33,4 +33,3 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 # Stuff I added
 gem 'validates_timeliness', '~> 3.0'
 gem 'attr_encrypted'
-gem 'modernizr-rails'
