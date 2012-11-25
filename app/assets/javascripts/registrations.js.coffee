@@ -5,14 +5,6 @@ jQuery ($) ->
   $(".phone").mask "(999) 999-9999? x99999"
   Placeholders.init();
 
-# jQuery ->
-#   $('#registrations').dataTable
-#     sPaginationType: "full_numbers"
-#     bJQueryUI: true
-#     bProcessing: true
-#     bServerSide: true
-#     sAjaxSource: $('#registrations').data('source')
-
 # document.getElementsByClassName("eStore_buy_now_button")[0].onclick = ->
 #   window.btn_clicked = true
 # 

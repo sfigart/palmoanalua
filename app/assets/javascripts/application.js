@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require_tree .
 //= require jquery.maskedinput-1.3.min
-//= require Placeholders/Placeholders
+//= require Placeholders.js/Placeholders.js
+//= require modernizr
