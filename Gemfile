@@ -34,4 +34,9 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem 'validates_timeliness', '~> 3.0'
 gem 'attr_encrypted'
 # Required for IE to show header correct
-gem 'modernizr-rails' 
+gem 'modernizr-rails'
+
+# Stuff for Heroku
+group :production do
+  gem 'newrelic_rpm'
+end
