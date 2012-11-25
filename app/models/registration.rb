@@ -6,24 +6,33 @@ class Registration < ActiveRecord::Base
   attr_encrypted :birth_date, :key => 'something secret!'
   
   validates :player_last_name, :player_first_name,
-                :father_last_name, :father_first_name,
-                :mother_last_name, :mother_first_name,
-                :address_line_1, :city, :state,
-                :home_phone,
-                :father_cell_phone, :father_work_phone,
-                :mother_cell_phone, :mother_work_phone,
-                :email_address, :school, :grade,
-                :age, :gender,
-                :shirt_size,
-                :parent_name_for_agreement,
-                :volunteer_type,
-                :presence => true
+            :father_last_name, :father_first_name,
+            :mother_last_name, :mother_first_name,
+            :address_line_1, :city, :state,
+            # :home_phone,
+            # :father_cell_phone, :father_work_phone,
+            # :mother_cell_phone, :mother_work_phone,
+            :email_address, :school, :grade,
+            :age, :gender,
+            :shirt_size,
+            :parent_name_for_agreement,
+            :volunteer_type,
+            :presence => true
   validates_date :birth_date
   validates :zip_code,      :presence => true, :numericality => { :only_integer => true }
   validates :email_address, :presence => true, :email => true
   validates :has_medical_insurance, :inclusion => {:in => [true, false], :message => "can't be blank"}
   validates :medical_insurance_name, :presence => true, :if => :medical_insurance_name_required?
+  validate  :has_at_least_one_contact_phone_number
 
+  def birth_date_as_date=(value)
+    self.birth_date = value
+  end
+  
+  def birth_date_as_date
+    Date.strptime(self.birth_date, '%F')
+  end
+  
   def medical_insurance_name_required?
     has_medical_insurance
   end
@@ -35,14 +44,15 @@ class Registration < ActiveRecord::Base
   def player_name
     "#{player_first_name} #{player_last_name}"
   end
-  
-  def birth_date_as_date=(value)
-    self.birth_date = value
+
+  def has_at_least_one_contact_phone_number
+    phone_number_attributes = [home_phone, father_cell_phone, father_work_phone,
+            mother_cell_phone, mother_work_phone]
+    phone_number_attributes.delete_if {|phone_number| phone_number.nil? || phone_number.empty? }
+    
+    errors.add(:phone_number_presence, "must have at least one contact phone number") if phone_number_attributes.empty?
   end
-  
-  def birth_date_as_date
-    Date.strptime(self.birth_date, '%F')
-  end
+
   
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
@@ -52,4 +62,5 @@ class Registration < ActiveRecord::Base
       end
     end
   end
+  
 end

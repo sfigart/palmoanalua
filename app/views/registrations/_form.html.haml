@@ -1,5 +1,7 @@
 = simple_form_for(@registration) do |f|
-  = f.error_notification
+  .row
+    .span10
+      = f.error_notification
   .form-inputs
     .row
       %fieldset
@@ -38,11 +40,23 @@
 
     .row
       %fieldset
-        %legend Contact Information
+        %legend Contact Email Address
+        .row
+          .span12
+            %p The email address you provide will be used to contact you about MAC Volleyball information.
+        .row
+          .span6= f.input :email_address, :label => 'Email address', :input_html => {:class => 'input-block-level'}
+
+    .row
+      %fieldset
+        %legend Contact Phone Information
+        .row
+          .span10
+            %p The phone numbers you provide will be used to contact you during the volleyball season by the league adminstrator, team coach or team parent.
+        = phone_number_presence_notice(@registration)
         .row
           .span3
             = f.input :home_phone, :label => "Home phone", :input_html => {:class => 'input-block-level phone', :type => :text}
-          .span6= f.input :email_address, :label => 'Email address', :input_html => {:class => 'input-block-level'}
         .row
           .span3= f.input :father_cell_phone, :label => "Father's cell", :input_html => {:class => 'input-block-level phone', :type => :text}
           .span3= f.input :father_work_phone, :label => "Father's work", :input_html => {:class => 'input-block-level phone', :type => :text}
@@ -62,7 +76,7 @@
         .row
           .span9
             - if @registration.new_record?
-              = f.input :birth_date, :as => :date, :start_year => Date.today.year - 13,  :end_year => Date.today.year, :order => [:month, :day, :year], :use_short_month => true, :prompt => true, :input_html => {:class => 'input-small'}
+              = f.input :birth_date, :as => :date, :start_year => Date.today.year - 15,  :end_year => Date.today.year, :order => [:month, :day, :year], :use_short_month => true, :prompt => true, :input_html => {:class => 'input-small'}
             - else
               = f.input :birth_date_as_date
 
@@ -107,7 +121,9 @@
     .row
       %fieldset
         %legend Parents as Volunteers
-        %p MAC activities are run by parent's such as yourself. Volunteering to coach a team or being a team parent is encouraged. Without enough head coaches, MAC has to turn away interested players.
+        .row
+          .span10
+            %p MAC activities are run by parent's such as yourself. Volunteering to coach a team or being a team parent is encouraged. Without enough head coaches, MAC has to turn away interested players.
         .row
           .span8
             = f.input :volunteer_type, :collection => volunteer_types, :label => false, :as => :radio_buttons, :item_wrapper_class => 'inline'

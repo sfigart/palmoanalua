@@ -1,5 +1,11 @@
 module RegistrationsHelper
 
+  def phone_number_presence_notice(registration)
+    if registration.errors.include?(:phone_number_presence)
+      render :partial => 'phone_number_presence_notice'
+    end
+  end
+  
   def to_mmddyy(birth_date)
     real_date = DateTime.strptime(birth_date,"%Y-%m-%d")
     real_date.strftime("%m/%d/%Y")
