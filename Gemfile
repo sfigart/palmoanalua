@@ -39,4 +39,5 @@ gem 'modernizr-rails'
 # Stuff for Heroku
 group :production do
   gem 'newrelic_rpm'
+  gem 'google-analytics-rails'
 end
