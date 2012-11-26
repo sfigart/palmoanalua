@@ -11,11 +11,14 @@
     = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
     #wrap
-      .container
-        %header.navbar.navbar-fixed-top.navbar-inverse
-          %nav.navbar-inner
-            .container
-              = render 'layouts/navigation'
+      .navbar.navbar-fixed-top.navbar-inverse
+        %nav.navbar-inner
+          .container
+            %button.btn.btn-navbar{:data => {:toggle => :collapse, :target => '.nav-collapse'}}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = render 'layouts/navigation'
       = render 'layouts/header'
       .container
         #main{:role => "main"}
