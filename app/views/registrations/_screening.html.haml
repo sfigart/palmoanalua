@@ -1,10 +1,19 @@
 %fieldset
   %legend SCREENING
   %p All applications will be prioritized based on the following criteria:
-  %ol
+  %ul
     %li Head coaches child/children
     %li 
       Those living in the Moanalua Elementary/Middle School district -
       %em proof of residency required.
     %li Players attending Moanalua Elementary or Middle School on a district exception.
   %p We are hopeful to place all prospective players, but cannot assure based on amount of courts and head coaches available.
+  .well
+    .row
+      .span5= f.input :lives_in_district, :label => "Do you live in the Moanalua Elementary/Middle School district?", :as => :radio_buttons
+      .span6
+        .alert.alert-info
+          %span.label.label-warning Notice
+          %em You will be required to submit proof of residency in the Moanalua Elementary/Middle School district
+    %hr
+    = f.input :has_geographic_exception, :label => "Does the player attend Moanalua Elementary or Middle school with a geographic exception", :as => :radio_buttons

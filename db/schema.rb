@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120062007) do
+ActiveRecord::Schema.define(:version => 20121127054138) do
 
   create_table "registrations", :force => true do |t|
     t.string   "activity"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20121120062007) do
     t.string   "parent_name_for_agreement"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.boolean  "lives_in_district"
+    t.boolean  "has_geographic_exception"
   end
 
   create_table "roles", :force => true do |t|

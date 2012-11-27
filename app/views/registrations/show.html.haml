@@ -1,87 +1,151 @@
 %p#notice= notice
 
-%p
-  %b Registration number:
-  = @registration.number
+.row
+  .span3
+    %p
+      %b.pull-right Registration number:
+  .span6= @registration.number
 
-%p
-  %b Player first name:
-  = @registration.player_first_name
-%p
-  %b Player last name:
-  = @registration.player_last_name
-%p
-  %b Father first name:
-  = @registration.father_first_name
-%p
-  %b Father last name:
-  = @registration.father_last_name
-%p
-  %b Mother first name:
-  = @registration.mother_first_name
-%p
-  %b Mother last name:
-  = @registration.mother_last_name
-%p
-  %b Address line 1:
-  = @registration.address_line_1
-%p
-  %b Address line 2:
-  = @registration.address_line_2
-%p
-  %b City:
-  = @registration.city
-%p
-  %b State:
-  = @registration.state
-%p
-  %b Zip code:
-  = @registration.zip_code
-%p
-  %b Home phone:
-  = @registration.home_phone
-%p
-  %b Father cell phone:
-  = @registration.father_cell_phone
-%p
-  %b Mother cell phone:
-  = @registration.mother_cell_phone
-%p
-  %b Email address:
-  = @registration.email_address
-%p
-  %b School:
-  = @registration.school
-%p
-  %b Grade:
-  = @registration.grade
-%p
-  %b Birth date:
-  = @registration.birth_date
-%p
-  %b Age:
-  = @registration.age
-%p
-  %b Gender:
-  = @registration.gender
-%p
-  %b Shirt size:
-  = @registration.shirt_size
-%p
-  %b Has Medical insurance:
-  = @registration.has_medical_insurance
-%p
-  %b Medical insurance name:
-  = @registration.medical_insurance_name
-%p
-  %b Practice days:
-  = @registration.practice_days
-%p
-  %b Volunteer type:
-  = @registration.volunteer_type
-%p
-  %b Parent name for agreement:
-  = @registration.parent_name_for_agreement
+.row
+  .span3
+    %p
+      %b.pull-right Player first name:
+  .span6= @registration.player_first_name
+.row
+  .span3
+    %p
+      %b.pull-right Player last name:
+  .span6= @registration.player_last_name
+.row
+  .span3
+    %p
+      %b.pull-right Father first name:
+  .span6= @registration.father_first_name
+.row
+  .span3
+    %p
+      %b.pull-right Father last name:
+  .span6= @registration.father_last_name
+.row
+  .span3
+    %p
+      %b.pull-right Mother first name:
+  .span6= @registration.mother_first_name
+.row
+  .span3
+    %p
+      %b.pull-right Mother last name:
+  .span6= @registration.mother_last_name
+.row
+  .span3
+    %p
+      %b.pull-right Address line 1:
+  .span6= @registration.address_line_1
+.row
+  .span3
+    %p
+      %b.pull-right Address line 2:
+  .span6= @registration.address_line_2
+.row
+  .span3
+    %p
+      %b.pull-right City:
+  .span6= @registration.city
+.row
+  .span3
+    %p
+      %b.pull-right State:
+  .span6= @registration.state
+.row
+  .span3
+    %p
+      %b.pull-right Zip code:
+  .span6= @registration.zip_code
+.row
+  .span3
+    %p
+      %b.pull-right Home phone:
+  .span6= @registration.home_phone
+.row
+  .span3
+    %p
+      %b.pull-right Father cell phone:
+  .span6= @registration.father_cell_phone
+.row
+  .span3
+    %p
+      %b.pull-right Mother cell phone:
+  .span6= @registration.mother_cell_phone
+.row
+  .span3
+    %p
+      %b.pull-right Email address:
+  .span6= @registration.email_address
+.row
+  .span3
+    %p
+      %b.pull-right School:
+  .span6= @registration.school
+.row
+  .span3
+    %p
+      %b.pull-right Grade:
+  .span6= @registration.grade
+.row
+  .span3
+    %p
+      %b.pull-right Birth date:
+  .span6= @registration.birth_date
+.row
+  .span3
+    %p
+      %b.pull-right Age:
+  .span6= @registration.age
+.row
+  .span3
+    %p
+      %b.pull-right Gender:
+  .span6= @registration.gender
+.row
+  .span3
+    %p
+      %b.pull-right Shirt size:
+  .span6= @registration.shirt_size
+.row
+  .span3
+    %p
+      %b.pull-right Has Medical insurance:
+  .span6= @registration.has_medical_insurance
+.row
+  .span3
+    %p
+      %b.pull-right Medical insurance name:
+  .span6= @registration.medical_insurance_name
+.row
+  .span3
+    %p
+      %b.pull-right Practice days:
+  .span6= @registration.practice_days
+.row
+  .span3
+    %p
+      %b.pull-right Volunteer type:
+  .span6= @registration.volunteer_type
+.row
+  .span3
+    %p
+      %b.pull-right Lives in district:
+  .span6= @registration.lives_in_district
+.row
+  .span3
+    %p
+      %b.pull-right Has geographic exception:
+  .span6= @registration.has_geographic_exception
+.row
+  .span3
+    %p
+      %b.pull-right Parent name for agreement:
+  .span6= @registration.parent_name_for_agreement
 
 = link_to 'Edit', edit_registration_path(@registration)
 \|

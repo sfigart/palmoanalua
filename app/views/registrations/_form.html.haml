@@ -33,7 +33,7 @@
 
     %fieldset
       %legend Contact Email Address
-      %p The email address you provide will be used to contact you about MAC Volleyball information.
+      %p The email address will be used to contact you about MAC volleyball information.
       .row
         .span6= f.input :email_address, :placeholder => 'Email address', :label => false, :input_html => {:class => 'input-block-level'}
 
@@ -54,10 +54,6 @@
     %fieldset
       %legend Player's Information
       .row
-        .span3= f.input :grade, :collection => grades
-        .span6= f.input :school, :input_html => {:class => 'input-block-level'}
-
-      .row
         .span9
           - if @registration.new_record?
             = f.input :birth_date, :as => :date, :start_year => Date.today.year - 15,  :end_year => Date.today.year, :order => [:month, :day, :year], :use_short_month => true, :prompt => true, :input_html => {:class => 'input-small'}
@@ -69,10 +65,14 @@
         .span3= f.input :gender, :collection => genders
         .span3= f.input :shirt_size, :collection => shirt_sizes
 
+      .row
+        .span3= f.input :grade, :collection => grades
+        .span6= f.input :school, :input_html => {:class => 'input-block-level'}
+
     %fieldset
       %legend Medical Insurance Coverage
       .row
-        .span4= f.input :has_medical_insurance, :label => "Medical Insurance Coverage Plan?", :as => :select
+        .span4= f.input :has_medical_insurance, :label => "Medical Insurance Coverage Plan?", :as => :radio_buttons
         .span6= f.input :medical_insurance_name, :label => "Name of Insurance", :input_html => {:class => 'input-block-level'}
       .row
         .span12
@@ -105,7 +105,7 @@
 
     = render :partial => 'agreement', :locals => {:f => f}
     = render :partial => 'fees'
-    = render :partial => 'screening'
+    = render :partial => 'screening', :locals => {:f => f}
     = render :partial => 'payment'
 
     .form-actions
