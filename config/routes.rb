@@ -16,4 +16,6 @@ PalMoanalua::Application.routes.draw do
   devise_scope :user do
     get "/cnaks" => "devise/sessions#new"
   end
+
+  match '/privacy' => "home#privacy"
 end
