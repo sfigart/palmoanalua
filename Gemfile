@@ -4,7 +4,7 @@ gem 'rails', '3.2.9'
 
 group :development, :test do
   gem 'sqlite3'
-  #gem 'mysql2'
+  gem 'mysql2'
 end
 group :production do
   gem 'pg'
