@@ -10,6 +10,7 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
+  - gem install bundler
   - cp config/database.travis.yml config/database.yml
   - mysql -e 'create database palmoanalua_test'
   - psql -c 'create database palmoanalua_test' -U postgres
