@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127054138) do
+ActiveRecord::Schema.define(:version => 20121211033537) do
 
   create_table "registrations", :force => true do |t|
     t.string   "activity"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20121127054138) do
     t.datetime "updated_at",                               :null => false
     t.boolean  "lives_in_district"
     t.boolean  "has_geographic_exception"
+    t.string   "division"
   end
 
   create_table "roles", :force => true do |t|

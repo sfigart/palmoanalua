@@ -63,11 +63,26 @@
       .row
         .span1= f.input :age, :input_html => {:class => 'input-mini', :type => :text, :maxlength => 2}
         .span3= f.input :gender, :collection => genders
-        .span3= f.input :shirt_size, :collection => shirt_sizes
 
       .row
         .span3= f.input :grade, :collection => grades
         .span6= f.input :school, :input_html => {:class => 'input-block-level'}
+
+      .row
+        .span3= f.input :shirt_size, :collection => shirt_sizes
+        .span9
+          %br
+          .alert.alert-info
+            %span.label.label-warning Notice
+            %em Since shirts will not be tried on, all shirts are Hanes cotton tees
+        
+      .row
+        .span3= f.input :division, :collection => divisions, :as => :radio_buttons
+        .span9
+          %br
+          .alert.alert-info
+            %span.label.label-warning Notice
+            %em If you are looking at moving your child to a higher age agroup please contact __________
 
     %fieldset
       %legend Medical Insurance Coverage

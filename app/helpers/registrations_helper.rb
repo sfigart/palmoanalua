@@ -24,6 +24,14 @@ module RegistrationsHelper
     4..12
   end
   
+  def divisions
+    [  
+      ['Pinto   (4/30/2006 - 5/1/2004)', 'Pinto'],
+      ['Mustang (4/30/2004 - 5/1/2002)', 'Mustang'],
+      ['Bronco  (4/30/2002 - 5/1/1999)', 'Bronco']
+    ]
+  end
+  
   def genders
     [
       ['Male', 'M'],

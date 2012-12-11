@@ -5,7 +5,8 @@ class Registration < ActiveRecord::Base
                   :medical_insurance_name, :has_medical_insurance, :mother_cell_phone, :father_work_phone,
                   :mother_work_phone, :mother_first_name, :mother_last_name, :parent_name_for_agreement,
                   :player_first_name, :player_last_name, :practice_days, :school, :shirt_size, :state,
-                  :volunteer_type, :zip_code, :lives_in_district, :has_geographic_exception
+                  :volunteer_type, :zip_code, :lives_in_district, :has_geographic_exception,
+                  :division
   attr_accessible :birth_date_as_date
   serialize :practice_days
   attr_encrypted :birth_date, :key => 'something secret!'
@@ -19,7 +20,9 @@ class Registration < ActiveRecord::Base
             :shirt_size,
             :parent_name_for_agreement,
             :volunteer_type,
+            :division,
             :presence => true
+            
   validates_date :birth_date
   validates :email_address, :presence => true, :email => true
   validates :has_geographic_exception, :inclusion => {:in => [true, false], :message => "can't be blank"}
