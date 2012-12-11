@@ -14,10 +14,11 @@
       .navbar.navbar-fixed-top.navbar-inverse
         %nav.navbar-inner
           .container
-            %button.btn.btn-navbar{:data => {:toggle => :collapse, :target => '.nav-collapse'}}
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
+            - if user_signed_in?
+              %button.btn.btn-navbar{:data => {:toggle => :collapse, :target => '.nav-collapse'}}
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
             = render 'layouts/navigation'
       .container{:id=>"main-container"}
         = render 'layouts/header'
