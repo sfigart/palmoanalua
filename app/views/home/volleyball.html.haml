@@ -1,6 +1,6 @@
 %h3 Moanalua Athletic Club (MAC) Volleyball Information
 %p
-  Online Registration period is 1/05/2013 - 2/02/2013
+  Online Registration period is 1/5/2013 - 2/2/2013
   %strong.text-error ABSOLUTELY NO LATE REGISTRATIONS
 
 %h4 Registration ages are as follows:
@@ -22,9 +22,13 @@
   %li Players who are requesting specific days of practice and are not a head coaches child
 
 %h4 Notification:
-%p If accepted you will be sent an email with instructions.  Please follow and submit prior to deadline or acceptance into the league will be terminated.
+%p If accepted, you will be sent an email with instructions.  Please follow and submit prior to deadline or acceptance into the league will be terminated.
 
-%p Contact ______________________ for questions or assistance
+%p
+  Contact
+  = mail_to "palmoanalua@gmail.com", nil, :subject => "MAC Volleyball Question"
+  %i.icon-envelope
+  for questions or assistance
 .row
   .span12
     .alert.alert-warning

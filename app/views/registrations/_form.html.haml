@@ -82,7 +82,10 @@
           %br
           .alert.alert-info
             %span.label.label-warning Notice
-            %em If you are looking at moving your child to a higher age group please contact __________
+            %em
+              If you are looking at moving your child to a higher age group please contact
+              = mail_to "palmoanalua@gmail.com", nil, :subject => "MAC Volleyball - moving my child to a higher age group"
+              %i.icon-envelope
 
     %fieldset
       %legend Medical Insurance Coverage
