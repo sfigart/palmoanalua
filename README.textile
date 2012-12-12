@@ -3,9 +3,3 @@
 h1. PAL Moanalua
 
 This application is a simple registration form with a lightweight admin backend focused on exporting to Excel.
-
-h2. Credits
-
-Volleyball image from: http://iconbug.com/detail/icon/2714/plain-white-volleyball/
-Martin Berube
-Licence: Free for commercial use
