@@ -83,6 +83,6 @@ class Registration < ActiveRecord::Base
     self.params = request.params.to_s
     self.http_referrer = request.referrer
     self.http_cookie = request.cookies.to_s
-    self.request_uri = request.request_uri
+    self.request_fullpath = request.fullpath
   end  
 end

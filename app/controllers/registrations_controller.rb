@@ -45,6 +45,7 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(params[:registration])
+    @registration.record_request_info(request)
     
     respond_to do |format|
       if @registration.save

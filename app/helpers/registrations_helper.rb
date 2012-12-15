@@ -1,5 +1,38 @@
 module RegistrationsHelper
 
+  def show_fields
+    [
+      :number,
+      :player_first_name, :player_last_name,
+      :father_first_name, :father_last_name,
+      :mother_first_name, :mother_last_name,
+      :address_line_1, :address_line_2,
+      :city, :state, :zip_code,
+      :home_phone, :father_cell_phone, :mother_cell_phone,
+      :email_address,
+      :school, :grade,
+      :birth_date, :age, :gender,
+      :division, :shirt_size,
+      :has_medical_insurance, :medical_insurance_name,
+      :priority, :practice_days,
+      :volunteer_type,
+      :lives_in_district, :has_geographic_exception,
+      :parent_name_for_agreement,    
+    ]
+  end
+  
+  def show_technical_fields
+    [
+      :remote_ip,
+      :method,
+      :user_agent,
+      :params,
+      :http_referrer,
+      :http_cookie,
+      :request_fullpath
+    ]
+  end
+  
   def phone_number_presence_notice(registration)
     if registration.errors.include?(:phone_number_presence)
       render :partial => 'phone_number_presence_notice'

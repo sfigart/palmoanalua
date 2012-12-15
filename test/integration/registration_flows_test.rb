@@ -53,6 +53,9 @@ class RegistrationFlowsTest < ActionDispatch::IntegrationTest
    assert_equal("Father", assigns(:registration).father_first_name)
    assert_equal(false, assigns(:registration).new_record?)
    assert_equal(true, assigns(:registration).valid?)
+   
+   assert_equal("POST", assigns(:registration).method)
+   assert_equal("/registrations", assigns(:registration).request_fullpath)
   end
   
   test "Post invalid registration" do

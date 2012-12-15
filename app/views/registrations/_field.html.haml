@@ -1,0 +1,5 @@
+.row
+  .span3
+    %p
+      %b.pull-right= attribute.to_s.titleize
+  .span6= @registration.send(attribute)
