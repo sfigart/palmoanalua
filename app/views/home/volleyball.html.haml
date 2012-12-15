@@ -29,15 +29,5 @@
   = mail_to "palmoanalua@gmail.com", nil, :subject => "MAC Volleyball Question"
   %i.icon-envelope
   for questions or assistance
-.row
-  .span12
-    .alert.alert-warning
-      .row
-        .span5
-          =link_to 'Preview the Beta Registration Page!', new_registration_url, class: 'btn btn-large btn-primary'
-        .span6
-          %span.label.label-warning Warning
-          Any data you enter in the preview registration page is only for
-          %em
-            testing
-          purposes. It will be deleted when the official registration period begins.
+.alert.alert-warning
+  =link_to 'Register Now', new_registration_url, class: 'btn btn-large btn-primary'
