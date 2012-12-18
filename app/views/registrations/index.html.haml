@@ -7,6 +7,7 @@
 %table.table.table-striped.table-bordered.table-hover.table-condensed{:id => :registrations}
   %thead
     %tr
+      %th
       %th Registration #
       %th Player
       %th Email
@@ -23,8 +24,9 @@
       %th
 
   %tbody
-  - @registrations.each do |registration|
+  - @registrations.each_with_index do |registration, index|
     %tr
+      %td= index+1
       %td= link_to(registration.number, registration)
       %td= registration.player_name
       %td= registration.email_address
