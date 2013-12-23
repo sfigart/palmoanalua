@@ -6,7 +6,7 @@ class Registration < ActiveRecord::Base
                   :mother_work_phone, :mother_first_name, :mother_last_name, :parent_name_for_agreement,
                   :player_first_name, :player_last_name, :practice_days, :school, :shirt_size, :state,
                   :volunteer_type, :zip_code, :lives_in_district, :has_geographic_exception,
-                  :division
+                  :division, :has_played, :years_played
   attr_accessible :birth_date_as_date
   serialize :practice_days
   attr_encrypted :birth_date, :key => 'something secret!'
@@ -31,6 +31,8 @@ class Registration < ActiveRecord::Base
   validates :medical_insurance_name, :presence => true, :if => :medical_insurance_name_required?
   validates :zip_code, :presence => true, :numericality => { :only_integer => true }
   validate  :has_at_least_one_contact_phone_number
+  validates :has_played, :inclusion => {:in => [true, false], :message => "can't be blank"}
+  validates :years_played, :presence => true, :if => :years_played_required?
 
   def birth_date_as_date=(value)
     self.birth_date = value
@@ -44,8 +46,12 @@ class Registration < ActiveRecord::Base
     has_medical_insurance
   end
   
+  def years_played_required?
+    has_played
+  end
+
   def number
-    "2013VB%03d" % self.id unless self.new_record?
+    "2014VB%03d" % self.id unless self.new_record?
   end
   
   def player_name

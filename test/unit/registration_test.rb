@@ -18,6 +18,25 @@ class RegistrationTest < ActiveSupport::TestCase
     @reg.valid?
     assert_nil(@reg.errors.include?(:medical_insurance_name))
   end
+
+  test "years_played" do
+    @reg.valid?
+    assert_nil(@reg.errors.include?(:years_played))
+    
+    @reg.has_played = true
+    @reg.valid?
+    assert(@reg.errors.include?(:years_played))
+    assert_equal("can't be blank", @reg.errors.get(:years_played).join)
+
+    @reg.years_played = 5
+    @reg.valid?
+    assert_nil(@reg.errors.include?(:years_played))
+
+    @reg.years_played = nil
+    @reg.has_played = false
+    @reg.valid?
+    assert_nil(@reg.errors.include?(:years_played))
+  end
   
   test "nil birth_date" do
     @reg.valid?

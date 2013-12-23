@@ -86,6 +86,11 @@
               If you are looking at moving your child to a higher age group please contact
               = mail_to "palmoanalua@gmail.com", nil, :subject => "MAC Volleyball - moving my child to a higher age group"
               %i.icon-envelope
+    %fieldset
+      %legend Player's Experience
+      .row
+        .span5= f.input :has_played, :label => "Has your child played organized volleyball in the past?", :as => :radio_buttons
+        .span3= f.input :years_played, :label => "If yes, how many years?", :input_html => {:class => 'input-block-level'}
 
     %fieldset
       %legend Medical Insurance Coverage

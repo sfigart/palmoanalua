@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121215082927) do
+ActiveRecord::Schema.define(:version => 20131223041307) do
 
   create_table "registrations", :force => true do |t|
     t.string   "activity"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20121215082927) do
     t.string   "http_referrer"
     t.text     "http_cookie"
     t.string   "request_fullpath"
+    t.boolean  "has_played"
+    t.integer  "years_played"
   end
 
   create_table "roles", :force => true do |t|

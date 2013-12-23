@@ -39,6 +39,8 @@ class RegistrationFlowsTest < ActionDispatch::IntegrationTest
       "school"=>"Moanalua Elementary School",
       "shirt_size"=>"AS",
       "division"=>"Bronco",
+      "has_played"=>"true",
+      "years_played"=>"1",
       "has_medical_insurance"=>"true",
       "medical_insurance_name"=>"HMSA",
       "practice_days"=>["M", "Tu", "W", "Th", "F", ""],

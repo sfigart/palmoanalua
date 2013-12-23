@@ -13,6 +13,7 @@ module RegistrationsHelper
       :school, :grade,
       :birth_date, :age, :gender,
       :division, :shirt_size,
+      :has_played, :years_played,
       :has_medical_insurance, :medical_insurance_name,
       :priority, :practice_days,
       :volunteer_type,
@@ -59,9 +60,9 @@ module RegistrationsHelper
   
   def divisions
     [  
-      ['Pinto   (4/30/2006 - 5/1/2004)', 'Pinto'],
-      ['Mustang (4/30/2004 - 5/1/2002)', 'Mustang'],
-      ['Bronco  (4/30/2002 - 5/1/1999)', 'Bronco']
+      ['Pinto   (4/30/2007 - 5/1/2005)', 'Pinto'],
+      ['Mustang (4/30/2005 - 5/1/2003)', 'Mustang'],
+      ['Bronco  (4/30/2003 - 5/1/2000)', 'Bronco']
     ]
   end
   

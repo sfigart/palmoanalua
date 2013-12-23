@@ -1,12 +1,13 @@
-%h3 Moanalua Athletic Club (MAC) Volleyball Information
+%h3 Moanalua Athletic Club (MAC) 2014 Volleyball Information
 %p
-  MAC volleyball registration is completed.  Please check with PAL if any other districts are registering for youth volleyball.   Mahalo
+  Online Registration period is 1/4/2014 - 2/1/2014
+  %strong.text-error ABSOLUTELY NO LATE REGISTRATIONS
 
 %h4 Registration ages are as follows:
 %ol
-  %li Pinto (4/30/2006 - 5/1/2004)
-  %li Mustang (4/30/2004 - 5/1/2002)
-  %li Bronco (4/30/2002 - 5/1/1999)
+  %li Pinto (4/30/2007 - 5/1/2005)
+  %li Mustang (4/30/2005 - 5/1/2003)
+  %li Bronco (4/30/2003 - 5/1/2000)
 
 %h4 Priority for selection are as follows:
 %ol
@@ -28,3 +29,6 @@
   = mail_to "palmoanalua@gmail.com", nil, :subject => "MAC Volleyball Question"
   %i.icon-envelope
   for questions or assistance
+
+.alert.alert-warning
+  =link_to 'Register Now!', new_registration_url, class: 'btn btn-large btn-primary'

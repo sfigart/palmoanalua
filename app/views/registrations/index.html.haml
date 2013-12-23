@@ -20,6 +20,8 @@
       %th Practice Days
       %th Lives In District?
       %th Has GE?
+      %th Has Played?
+      %th Years Played
       %th
       %th
 
@@ -39,6 +41,8 @@
       %td= format_practice_days(registration.practice_days)
       %td= registration.lives_in_district
       %td= registration.has_geographic_exception
+      %td= registration.has_played
+      %td= registration.years_played
       %td= link_to 'Edit', edit_registration_path(registration)
       %td= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' }
 
