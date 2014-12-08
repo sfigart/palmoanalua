@@ -58,6 +58,8 @@ class RegistrationFlowsTest < ActionDispatch::IntegrationTest
    
    assert_equal("POST", assigns(:registration).method)
    assert_equal("/registrations", assigns(:registration).request_fullpath)
+   
+   assert_equal("AS", assigns(:registration).shirt_size)
   end
   
   test "Post invalid registration" do
