@@ -44,4 +44,5 @@ gem 'modernizr-rails', '2.0.6'
 group :production do
   gem 'newrelic_rpm'
   gem 'google-analytics-rails'
+  gem 'rails_12factor'
 end
