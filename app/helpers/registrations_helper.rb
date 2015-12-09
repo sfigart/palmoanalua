@@ -60,9 +60,9 @@ module RegistrationsHelper
   
   def divisions
     [  
-      ['Pinto   (4/30/2008 - 5/1/2006)', 'Pinto'],
-      ['Mustang (4/30/2006 - 5/1/2004)', 'Mustang'],
-      ['Bronco  (4/30/2004 - 5/1/2001)', 'Bronco']
+      ['Pinto   (4/30/2009 - 5/1/2007)', 'Pinto'],
+      ['Mustang (4/30/2007 - 5/1/2005)', 'Mustang'],
+      ['Bronco  (4/30/2005 - 5/1/2002)', 'Bronco']
     ]
   end
   

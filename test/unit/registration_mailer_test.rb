@@ -32,7 +32,7 @@ class RegistrationMailerTest < ActionMailer::TestCase
     # Text Email body
     text_body = @email.text_part.to_s
     
-    assert_match(/Thank you for registering for the PAL MAC 2015 volleyball season/,
+    assert_match(/Thank you for registering for the PAL MAC 2016 volleyball season/,
       text_body)
     assert_match(/Your application is being reviewed and you will be contacted by\r\nthe league coordinator./,
       text_body)  
@@ -51,7 +51,7 @@ class RegistrationMailerTest < ActionMailer::TestCase
     # Html Email body
     html_body = @email.html_part.to_s
     
-    assert_match(/Thank you for registering for the PAL MAC 2015 volleyball season/,
+    assert_match(/Thank you for registering for the PAL MAC 2016 volleyball season/,
       html_body)
     assert_match(/Your application is being reviewed and you will be contacted by the league coordinator./,
       html_body) 
