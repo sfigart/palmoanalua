@@ -17,7 +17,7 @@ class RegistrationsControllerTest < ActionController::TestCase
   end
   
   def test_thankyou
-    get :thankyou, :id => "1"
+    get :thankyou, :id => @registration.id
     assert_response :success
     assert_select('p', /Thank you/)
     assert_select('p', /Your registration number is\n#{@registration.number}/)
