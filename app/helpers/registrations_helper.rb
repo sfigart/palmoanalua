@@ -18,10 +18,10 @@ module RegistrationsHelper
       :priority, :practice_days,
       :volunteer_type,
       :lives_in_district, :has_geographic_exception,
-      :parent_name_for_agreement,    
+      :parent_name_for_agreement,
     ]
   end
-  
+
   def show_technical_fields
     [
       :remote_ip,
@@ -33,46 +33,46 @@ module RegistrationsHelper
       :request_fullpath
     ]
   end
-  
+
   def phone_number_presence_notice(registration)
     if registration.errors.include?(:phone_number_presence)
       render :partial => 'phone_number_presence_notice'
     end
   end
-  
+
   def to_mmddyy(birth_date)
     real_date = DateTime.strptime(birth_date,"%Y-%m-%d")
     real_date.strftime("%m/%d/%Y")
   end
-  
+
   def format_practice_days(practice_days)
     practice_days.reject! { |d| d.empty? }
     practice_days.join(', ')
   end
-  
+
   def format_to_hawaii(timewithzone)
     timewithzone.in_time_zone("Hawaii").strftime("%m/%d/%y %l:%M %p")
   end
-  
+
   def ages
     4..12
   end
-  
+
   def divisions
-    [  
-      ['Pinto   (4/30/2009 - 5/1/2007)', 'Pinto'],
-      ['Mustang (4/30/2007 - 5/1/2005)', 'Mustang'],
-      ['Bronco  (4/30/2005 - 5/1/2002)', 'Bronco']
+    [
+      ['Pinto   (4/30/2010 - 5/1/2008)', 'Pinto'],
+      ['Mustang (4/30/2008 - 5/1/2006)', 'Mustang'],
+      ['Bronco  (4/30/2006 - 5/1/2003)', 'Bronco']
     ]
   end
-  
+
   def genders
     [
       ['Male', 'M'],
       ['Female', 'F']
     ]
   end
-  
+
   def grades
     [
       ['Kindergarten', 'K'],
@@ -86,7 +86,7 @@ module RegistrationsHelper
       ['8th grade', '8']
     ]
   end
-  
+
   def practice_days
     [
       ['Monday', 'M'],
@@ -96,7 +96,7 @@ module RegistrationsHelper
       ['Friday', 'F']
     ]
   end
-  
+
   def shirt_sizes
     %w(YS YM YL AS AM AL AXL AXXL)
   end
@@ -109,7 +109,7 @@ module RegistrationsHelper
       'Unable to volunteer'
     ]
   end
-  
+
   def us_states
       [
         ['Alabama', 'AL'],
